@@ -1,0 +1,17 @@
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import Application from './src/App.js';
+import allReducers from './src/reducers/index.js';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import { TextInput, TouchableOpacity } from 'react-native';
+const store = createStore(allReducers);
+export default class App extends React.Component {
+  render() {
+    return (
+      <Provider store= {store}>
+      <Application/>
+      </Provider>
+    );
+  }
+}
